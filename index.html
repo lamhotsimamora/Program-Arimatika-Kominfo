@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	
+	<!-- Library ResponsiveVoice -->
+	<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+	<!-- Library Garuda Javascript -->
+	<script src="http://cdn.lamhotsimamora.com/garuda2"></script>
+
+	<title>Aplikasi Aritmatika (Penjumlahan, Pengurangan, Pengurangan & Pembagian)</title>
+</head>
+
+<body>
+	<br>
+	<div class="container">
+		
+		<div class="text-center">
+			<h2>Version 1</h2>
+		</div>
+		<br>
+		<!-- Angka 1 -->
+		<div class="input-group mb-3">
+		  <div class="input-group-prepend">
+		    <span class="input-group-text" id="basic-addon1">Number 1</span>
+		  </div>
+		  <input type="number" id="angka_satu" onkeypress="" class="form-control" placeholder="Masukkan Angka" aria-label="" aria-describedby="basic-addon1">
+		</div>
+		<!-- Angka 1 -->
+		
+		<!-- Angka 2 -->
+		<div class="input-group mb-3">
+		  <div class="input-group-prepend">
+		    <span class="input-group-text" id="basic-addon1">Number 2</span>
+		  </div>
+		  <input type="number" class="form-control" id="angka_dua" placeholder="Masukkan Angka" aria-label="" aria-describedby="basic-addon1">
+		</div>
+		<!-- Angka 2 -->
+		
+		<!-- Penjumlahan -->		
+		<div class="form-check">
+		  <label class="form-check-label">
+		    <input type="radio" onclick="calculate();" class="form-check-input" name="optradio" id="operator_penjumlahan"> ( + ) Penjumlahan
+		  </label>
+		</div>
+		<!-- Penjumlahan -->
+
+		<br>
+		<!-- Pengurangan -->		
+		<div class="form-check">
+		  <label class="form-check-label">
+		    <input type="radio" onclick="calculate();" class="form-check-input" name="optradio" id="operator_pengurangan"> ( - ) Pengurangan
+		  </label>
+		</div>
+		<!-- Pengurangan -->
+		
+		<br>
+		<!-- Perkalian -->		
+		<div class="form-check">
+		  <label class="form-check-label">
+		    <input type="radio" onclick="calculate();" class="form-check-input" name="optradio" id="operator_perkalian"> ( x ) Perkalian
+		  </label>
+		</div>
+		<!-- Perkalian -->
+	    
+        <br>
+		<!-- Pembagian -->		
+		<div class="form-check">
+		  <label class="form-check-label">
+		    <input type="radio" onclick="calculate();" class="form-check-input" name="optradio" id="operator_pembagian"> ( : ) Pembagian
+		  </label>
+		</div>
+		<!-- Pembagian -->
+		 
+ 		<br>
+ 		
+		<div class="alert alert-dark" role="alert">
+		  	<strong><div class="text-center" id="display_result">0</div></strong>
+		</div>
+
+		<br>
+		<button class="btn btn-primary btn-md" onclick="calculate();">
+			Hitung
+		</button> 
+	    <button class="btn btn-success btn-md" onclick="clearAll();">
+	    	Hapus
+	    </button>
+
+	</div>
+
+</body>
+
+<script src="app.js"></script>
+
+</html>
