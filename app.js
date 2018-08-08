@@ -112,14 +112,19 @@ function calculate(){
 			result_angka = angka_satu / angka_dua;
 		}
 
+		var RESULT_AKHIR = result_angka.toString();
+		
+		Garuda('display_terbilang').setHtml(terbilang(RESULT_AKHIR));
+
+		RESULT_AKHIR = RESULT_AKHIR.replace(".", ",");
+
 		// Menampilkan hasil result_angka ke div 'display_result'
-		Garuda('display_result').setHtml(result_angka.toString());
+		Garuda('display_result').setHtml(RESULT_AKHIR);
 
 		// Menjalankan fungsi textToAudio()
 		// Dengan memasukkan parameter result_angka
-		textToAudio(result_angka.toString());
+		textToAudio(RESULT_AKHIR);
 
-		Garuda('display_terbilang').setHtml(terbilang(result_angka.toString()));
 	}
 }
 
@@ -143,12 +148,34 @@ function clearAll(){
 
 function terbilang(nilai){
     var bilangan = nilai;
+
+    // check minus
+    var minus = undefined;
+   	if (nilai.substring(0, 1)==='-')
+    {
+    	minus = true;
+    	bilangan = bilangan.substring(1,bilangan.length);
+    }
+
+    // check Koma
+    var komma = undefined;
+   	if (nilai.substring(0, 1)===',')
+    {
+    	komma = true;
+    	bilangan = bilangan.substring(0,1);
+    	terbilang(bilangan);
+    	return;
+    }
+
+
     var kalimat="";
     var angka   = new Array('0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0');
     var kata    = new Array('','Satu','Dua','Tiga','Empat','Lima','Enam','Tujuh','Delapan','Sembilan');
     var tingkat = new Array('','Ribu','Juta','Milyar','Triliun');
     var panjang_bilangan = bilangan.length;
-     
+    
+   
+
     /* pengujian panjang bilangan */
     if(panjang_bilangan > 15){
         kalimat = "MAAF ~";
@@ -215,12 +242,10 @@ function terbilang(nilai){
             kalimat = kalimat.replace("Satu Ribu","Seribu");
         }
     }
-    return kalimat;
+    if (minus==true)
+    {
+    	return 'Minus '+kalimat;
+    }else{
+    	return kalimat;
+    }
 }
-
-
-var a = 2.5;
-
-var b = _writeLog(_whatThis(a));
-
-_writeLog(b);
