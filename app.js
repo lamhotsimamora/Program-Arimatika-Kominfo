@@ -156,29 +156,24 @@ function terbilang(nilai){
     	minus = true;
     	bilangan = bilangan.substring(1,bilangan.length);
     }
-
+    
     // check Koma
     var komma = undefined;
-   	if (nilai.substring(0, 1)===',')
+   	if (nilai.substring(0, 1)==='.')
     {
-    	komma = true;
-    	bilangan = bilangan.substring(0,1);
-    	terbilang(bilangan);
+    	//
     	return;
     }
-
-
+    
     var kalimat="";
     var angka   = new Array('0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0');
     var kata    = new Array('','Satu','Dua','Tiga','Empat','Lima','Enam','Tujuh','Delapan','Sembilan');
     var tingkat = new Array('','Ribu','Juta','Milyar','Triliun');
     var panjang_bilangan = bilangan.length;
-    
-   
 
     /* pengujian panjang bilangan */
     if(panjang_bilangan > 15){
-        kalimat = "MAAF ~";
+        kalimat = "";
     }else{
         /* mengambil angka-angka yang ada dalam bilangan, dimasukkan ke dalam array */
         for(i = 1; i <= panjang_bilangan; i++) {
