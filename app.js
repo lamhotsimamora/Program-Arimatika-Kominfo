@@ -15,6 +15,13 @@ function textToAudio($text)
 	}
 }
 
+function enterCalc(e){
+	if (e.keyCode==13)
+	{
+		calculate();
+	}
+}
+
 
 /*
 *  Fungsi menghitung
